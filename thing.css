@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+}
+.thing {
+  font-family: monospace;
+  margin: 0;
+  padding: 30px;
+  font-size: 1.2em;
+  word-break: break-word;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+.thing.dark {
+  background: #272822;
+  color: #eee;
+}
+.thing.dark .button {
+  border: 1px solid #eee;
+}
+.thing.dark .email,
+.thing.dark .url {
+  color: violet;
+}
+.thing.dark .sign {
+  color: red;
+}
+.thing.dark .property {
+  color: gold;
+}
+.thing.dark .string {
+  color: turquoise;
+}
+.thing.dark .number {
+  color: lime;
+}
+.thing.dark .boolean {
+  color: #f08;
+}
+.thing.dark .item.hover {
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px dotted #eee;
+}
+.thing.light {
+  background: #e4e0db;
+  color: gray;
+}
+.thing.light .button {
+  border: 1px solid gray;
+}
+.thing.light .email,
+.thing.light .url {
+  color: orangered;
+}
+.thing.light .sign {
+  color: red;
+}
+.thing.light .property {
+  color: #555;
+}
+.thing.light .string {
+  color: cornflowerblue;
+}
+.thing.light .number {
+  color: mediumvioletred;
+}
+.thing.light .boolean {
+  color: #80f;
+}
+.thing.light .item.hover {
+  background: rgba(255, 195, 100, 0.1);
+  border: 1px dotted gray;
+}
+.thing div {
+  display: table;
+}
+.thing .buttons .button {
+  display: inline-block;
+  padding: 8px 0;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 2ch;
+}
+.thing .buttons #open-close {
+  width: 17ch;
+  margin-right: 10px;
+}
+.thing .buttons #switch-theme {
+  padding: 8px 10px;
+  margin-left: 10px;
+}
+.thing .collapser {
+  position: relative;
+}
+.thing .collapser.closed {
+  display: inline-block;
+}
+.thing .item {
+  display: table!important;
+  border: 1px dotted transparent;
+  transition: border .15s, background .15s;
+}
+.thing .empty.array-item .collapser {
+  display: inline-block;
+}
+.thing .empty .collapsee,
+.thing .empty .sign {
+  display: none!important;
+}
+.thing .empty .closer.closed:before {
+  content: '';
+}
+.thing .sign {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: -2.5ch;
+  padding: 0 .5ch;
+  font-style: normal;
+}
+.thing .sign:after {
+  content: '-';
+}
+.thing .sign.closed:after {
+  content: '+';
+}
+.thing .collapsee {
+  position: relative;
+  overflow-y: hidden;
+}
+.thing .collapsee.hide {
+  display: inline-block;
+  height: 0;
+  width: 0;
+}
+.thing .closer {
+  position: relative;
+}
+.thing .closer.closed:before {
+  content: '\2026';
+  position: absolute;
+  right: 1.5ch;
+}
+.thing .property {
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.thing.color .null,
+.thing.color .undefined {
+  color: gray;
+}
+.thing.color .function {
+  color: #809d80;
+  font-style: italic;
+}
+@media screen and (max-width: 767px) {
+  .thing {
+    padding: 5px;
+    font-size: 1em;
+  }
+}

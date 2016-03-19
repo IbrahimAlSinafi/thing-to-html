@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  overflow-y: hidden;
+  height: 100vh;
+}
+.thing {
+  height: 100vh;
+}
+.themes {
+  padding: 5px 0;
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+}
+.color-circle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: blue;
+  border-radius: 50%;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 2px solid transparent;
+  transition: border .3s;
+}
+.color-circle:hover {
+  border: 2px solid red;
+}
+.color-circle#theme-dark {
+  background: #272822;
+  margin-right: 14px;
+}
+.color-circle#theme-light {
+  background: #e4e0db;
+  margin-left: 14px;
+}
+.example-buttons {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 30px 30px 0 0;
+  padding: 10px;
+  font-family: sans-serif;
+  background: url(square.png);
+  text-align: center;
+  -webkit-animation: squares 8s infinite linear;
+          animation: squares 8s infinite linear;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+.example-button {
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  transition: background .1s;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.2);
+}
+.example-button#example-object {
+  margin-bottom: 10px;
+}
+.example-button:hover {
+  background: white;
+  border-color: lightgray;
+}
+.user-input {
+  border-top: 1px solid gray;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.user-input #input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 5px;
+  margin: 10px 0;
+  transition: border 2s;
+}
+.user-input #input.error {
+  transition: none;
+  border: 1px solid red;
+}
+.user-input #submit {
+  transition: none;
+}
+.user-input #submit.active {
+  background: black;
+  color: white;
+}
+@-webkit-keyframes squares {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 64px 64px;
+  }
+}
+@keyframes squares {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 64px 64px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .example-buttons {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+    height: 90px;
+  }
+  .example-button {
+    font-size: .8em;
+    padding: 5px 15px;
+  }
+  .themes {
+    border-bottom: none;
+    margin: 0;
+  }
+  .left {
+    display: inline-block;
+    border-right: 1px solid gray;
+    padding-right: 40px;
+    margin-right: 40px;
+  }
+  .right {
+    display: inline-block;
+  }
+  .user-input {
+    display: none;
+  }
+  .thing {
+    padding-top: 95px;
+  }
+}

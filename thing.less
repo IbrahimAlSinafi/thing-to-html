@@ -1,0 +1,240 @@
+body {
+  margin: 0;
+}
+
+.thing {
+  // Non-theme variables.
+  @null-undefined: gray;
+  @function: #809d80;
+
+  // Dark variables.
+  @dark-background: #272822;
+  @dark-color: #eee;
+  @dark-sign: red;
+  @dark-property: gold;
+  @dark-string: turquoise;
+  @dark-number: lime;
+  @dark-item-bg: rgba(0,255,255,.1);
+  @dark-link: violet;
+  @dark-boolean: #f08;
+
+  // Light variables.
+  @light-background: #e4e0db;
+  @light-color: gray;
+  @light-sign: red;
+  @light-property: #555;
+  @light-string: cornflowerblue;
+  @light-number: mediumvioletred;
+  @light-item-bg: rgba(255,195,100,.1);
+  @light-link: orangered;
+  @light-boolean: #80f;
+
+  font-family: monospace;
+  margin: 0;
+  padding: 30px;
+  font-size: 1.2em;
+  word-break: break-word;
+  overflow-y: scroll;
+  box-sizing: border-box;
+
+  &.dark {
+    background: @dark-background;
+    color: @dark-color;
+
+    .button {
+      border: 1px solid @dark-color;
+    }
+
+    .email, .url {
+      color: @dark-link;
+    }
+
+    .sign {
+      color: @dark-sign;
+    }
+
+    .property {
+      color: @dark-property;
+    }
+
+    .string {
+      color: @dark-string;
+    }
+
+    .number {
+      color: @dark-number;
+    }
+
+    .boolean {
+      color: @dark-boolean;
+    }
+
+    .item {
+      &.hover {
+        background: @dark-item-bg;
+        border: 1px dotted @dark-color;
+      }
+    }
+  }
+
+  &.light {
+    background: @light-background;
+    color: @light-color;
+
+    .button {
+      border: 1px solid @light-color;
+    }
+
+    .email, .url {
+      color: @light-link;
+    }
+
+    .sign {
+      color: @light-sign;
+    }
+
+    .property {
+      color: @light-property;
+    }
+
+    .string {
+      color: @light-string;
+    }
+
+    .number {
+      color: @light-number;
+    }
+
+    .boolean {
+      color: @light-boolean;
+    }
+
+    .item {
+      &.hover {
+        background: @light-item-bg;
+        border: 1px dotted @light-color;
+      }
+    }
+  }
+
+  div {
+    display: table;
+  }
+
+  .buttons {
+    .button {
+      display: inline-block;
+      padding: 8px 0;
+      text-align: center;
+      user-select: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 2ch;
+    }
+
+    #open-close {
+      width: 17ch;
+      margin-right: 10px;
+    }
+
+    #switch-theme {
+      padding: 8px 10px;
+      margin-left: 10px;
+    }
+  }
+
+  .collapser {
+    position: relative;
+
+    &.closed {
+      display: inline-block;
+    }
+  }
+
+  .item {
+    display: table!important;
+    border: 1px dotted transparent;
+    transition: border .15s, background .15s;
+  }
+
+  .empty {
+    &.array-item {
+      .collapser {
+        display: inline-block;
+      }
+    }
+
+    .collapsee, .sign {
+      display: none!important;
+    }
+
+    .closer {
+      &.closed {
+        &:before {
+          content: '';
+        }
+      }
+    }
+  }
+
+  .sign {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: -2.5ch;
+    padding: 0 .5ch;
+    font-style: normal;
+
+    &:after {
+      content: '-';
+    }
+
+    &.closed:after {
+      content: '+';
+    }
+  }
+
+  .collapsee {
+    position: relative;
+    overflow-y: hidden;
+
+    &.hide {
+      display: inline-block;
+      height: 0;
+      width: 0;
+    }
+  }
+
+  .closer {
+    position: relative;
+
+    &.closed {
+      &:before {
+        content: '\2026'; // Ellipsis.
+        position: absolute;
+        right: 1.5ch;
+      }
+    }
+  }
+
+  .property {
+    font-weight: bold;
+    user-select: none;
+  }
+
+  &.color {
+    .null, .undefined {
+      color: @null-undefined;
+    }
+
+    .function {
+      color: @function;
+      font-style: italic;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 5px;
+    font-size: 1em;
+  }
+}

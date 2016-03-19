@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Object To HTML!</title>
+  <link rel="stylesheet" href="../thing.css">
+  <link rel="stylesheet" href="example.css">
+</head>
+<body>
+  <div class="example-buttons">
+    <div class="left">
+      <div>Select Theme:</div>
+      <div class="themes">
+        <span id="theme-dark" class="color-circle"></span>
+        <span id="theme-light" class="color-circle"></span>
+      </div>
+    </div>
+    <div class="right">
+      <div class="example-button" id="example-object" data-target="myObject">OBJECT</div>
+      <div class="example-button" id="example-array" data-target="myArray">ARRAY</div>
+    </div>
+    <div class="user-input">
+      <div>Paste your own:</div>
+      <textarea type="text" id="input"></textarea>
+      <div class="example-button" id="submit">SUBMIT</div>
+    </div>
+  </div>
+  <div id="container"></div>
+  <script src="../thingToHTML.js"></script>
+  <script src="example.js"></script>
+</body>
+</html>
