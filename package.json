@@ -1,6 +1,6 @@
 {
   "name": "thing-to-html",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert objects & arrays to HTML!",
   "keywords": ["html", "javascript", "object", "array", "convert", "thing", "JSON"],
   "main": "thingToHTML-npm.js",

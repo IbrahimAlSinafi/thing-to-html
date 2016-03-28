@@ -140,7 +140,7 @@ function thingToHTML(options) {
 
       // STRING, NUMBER, BOOLEAN, NULL, UNDEFINED
       // FUNCTION: single-line.
-      if(oneLinerCheck(item)) {
+      if(oneLinerCheck(type)) {
         var itemDiv = createEl('div', 'item');
         var property = createEl('span', 'property');
         var value = createEl('span', 'value ' + type.toLowerCase());
@@ -271,7 +271,7 @@ function thingToHTML(options) {
 
       // STRING / NUMBER / BOOLEAN / NULL / UNDEFINED
       // FUNCTION: single-line.
-      if(oneLinerCheck(item)) {
+      if(oneLinerCheck(type)) {
         var value = createEl('span', type.toLowerCase());
 
         if(type === 'Null' || type === 'Undefined') {
