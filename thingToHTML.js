@@ -120,21 +120,6 @@ function thingToHTML(options) {
     if(id) elem.setAttribute('id', id);
     return elem;
   }
-  function createCollapseButton() {
-    var signs = document.querySelectorAll('.sign');
-    var items = document.querySelectorAll('.item');
-    var buttons = createEl('div', 'buttons');
-    var openClose = createEl('div', 'button', 'open-close');
-    var un = createEl('span', false, 'un');
-
-    openClose.appendChild(un);
-    openClose.innerHTML += 'COLLAPSE ALL';
-    buttons.appendChild(openClose);
-    container.appendChild(buttons);
-
-    // Collapse / Uncollapse button: add click event listener.
-    openClose.addEventListener('click', all);
-  }
   function oneLinerCheck(type) {
     var oneLiner = ['String', 'Number', 'Boolean', 'Null', 'Undefined', 'Function'].some(function(name) {
       // One-liner function check.
@@ -152,17 +137,10 @@ function thingToHTML(options) {
     keys.map(function(key, i) {
       var item = obj[key];
       var type = checkType(item);
-      var oneLiner = ['String', 'Number', 'Boolean', 'Null', 'Undefined', 'Function'].some(function(name) {
-        // One-liner function check.
-        if(name === 'Function' && name === type) {
-          return item.toString().split('\n').length === 1 ? true : false;
-        }
-        return name === type;
-      });
 
       // STRING, NUMBER, BOOLEAN, NULL, UNDEFINED
       // FUNCTION: single-line.
-      if(oneLiner) {
+      if(oneLinerCheck(item)) {
         var itemDiv = createEl('div', 'item');
         var property = createEl('span', 'property');
         var value = createEl('span', 'value ' + type.toLowerCase());
@@ -290,17 +268,10 @@ function thingToHTML(options) {
     arr.map(function(piece, i) {
       var type = checkType(piece);
       var arrayItem = createEl('div', 'array-item item');
-      var oneLiner = ['String', 'Number', 'Boolean', 'Null', 'Undefined', 'Function'].some(function(name) {
-        // One-liner function check.
-        if(name === 'Function' && name === type) {
-          return piece.toString().split('\n').length === 1 ? true : false;
-        }
-        return name === type;
-      });
 
       // STRING / NUMBER / BOOLEAN / NULL / UNDEFINED
       // FUNCTION: single-line.
-      if(oneLiner) {
+      if(oneLinerCheck(item)) {
         var value = createEl('span', type.toLowerCase());
 
         if(type === 'Null' || type === 'Undefined') {

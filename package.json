@@ -1,9 +1,9 @@
 {
   "name": "thing-to-html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert objects & arrays to HTML!",
-  "keywords": ["html", "javascript", "object", "array", "convert", "thing"],
-  "main": "thingToHTML.js",
+  "keywords": ["html", "javascript", "object", "array", "convert", "thing", "JSON"],
+  "main": "thingToHTML-npm.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
