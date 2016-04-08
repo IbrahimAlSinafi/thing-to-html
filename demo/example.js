@@ -47,14 +47,15 @@
     ['array', ['within', 'arrays'], ['within' ['more', 'arrays']]]
   ];
 
+  selection = myObject;
+
   // Start with the example as an object.
   thingToHTML({
-    thing: myObject,
+    thing: window,
     container: '#container',
     button: true,
     theme: 'dark'
   });
-  selection = myObject;
 
   /**************************************/
   /****   EXAMPLE-SPECIFIC BUTTONS   ****/
