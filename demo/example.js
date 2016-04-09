@@ -4,8 +4,6 @@
   /****   EXAMPLES   ****/
   /**********************/
 
-  var selection;
-  var timer;
 
   var myObject = {
     string: 'This is a string.',
@@ -47,7 +45,8 @@
     ['array', ['within', 'arrays'], ['within' ['more', 'arrays']]]
   ];
 
-  selection = myObject;
+  var selection = myObject;
+  var timer;
 
   // Start with the example as an object.
   thingToHTML({

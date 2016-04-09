@@ -1,6 +1,6 @@
 {
   "name": "thing-to-html",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Convert objects & arrays to HTML!",
   "keywords": [
     "html",

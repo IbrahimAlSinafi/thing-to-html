@@ -4,9 +4,10 @@ function thingToHTML(options) {
   // SETUP //
   ///////////
 
-  // 'thing' must be an object or array.
   var type = checkType(options.thing);
-  if(type !== 'Object' && type !== 'Array') {
+
+  // 'thing' must be an object or array.
+  if(typeof options.thing !== 'object') {
     throw new TypeError('You must provide "thingToHTML" with an object or an array.');
   }
 
@@ -47,8 +48,8 @@ function thingToHTML(options) {
   middle.style.marginLeft = indent + unit;
 
   // Top level assignment: object or array.
-  type === 'Object' ? top.textContent = '{' : top.textContent = '[';
-  type === 'Object' ? bottom.textContent = '}' : bottom.textContent = ']';
+  type === 'Array' ? top.textContent = '[' : top.textContent = '{';
+  type === 'Array' ? bottom.textContent = ']' : bottom.textContent = '}';
 
 
   /////////////
@@ -59,10 +60,10 @@ function thingToHTML(options) {
   container.appendChild(top);
 
   // Process the contents via recursion.
-  if(type === 'Object') {
-    objToHTML(thing, middle, indent);
-  } else {
+  if(type === 'Array') {
     arrayToHTML(thing, middle, indent);
+  } else {
+    objToHTML(thing, middle, indent);
   }
 
   // Append the contents.
@@ -184,7 +185,7 @@ function thingToHTML(options) {
         container.appendChild(itemDiv);
 
       // OBJECT, ARRAY
-      } else if(type === 'Object' || type === 'Array') {
+      } else if(typeof item === 'object') {
         // Empty objects or arrays.
         var length = type === 'Object' ? Object.keys(item).length : item.length;
         var collapser = createEl('div', 'item collapser');
@@ -199,8 +200,8 @@ function thingToHTML(options) {
         property.textContent = key;
         collapser.appendChild(property);
 
-        collapser.innerHTML += type === 'Object' ? ': {' : ': [';
-        closer.textContent = type === 'Object' ? '}' : ']';
+        collapser.innerHTML += type === 'Array' ? ': [' : ': {';
+        closer.textContent = type === 'Array' ? ']' : '}';
 
         // For empty objects / arrays.
         if(!length) collapser.classList.add('empty');
