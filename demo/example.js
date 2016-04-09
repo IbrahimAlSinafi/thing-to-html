@@ -51,7 +51,7 @@
 
   // Start with the example as an object.
   thingToHTML({
-    thing: window,
+    thing: selection,
     container: '#container',
     button: true,
     theme: 'dark'

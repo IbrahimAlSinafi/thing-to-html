@@ -120,7 +120,7 @@ function thingToHTML(options) {
     if(id) elem.setAttribute('id', id);
     return elem;
   }
-  function oneLinerCheck(type,, item) {
+  function oneLinerCheck(type, item) {
     var oneLiner = ['String', 'Number', 'Boolean', 'Null', 'Undefined', 'Function'].some(function(name) {
       // One-liner function check.
       if(name === 'Function' && name === type) {
@@ -140,7 +140,7 @@ function thingToHTML(options) {
 
       // STRING, NUMBER, BOOLEAN, NULL, UNDEFINED
       // FUNCTION: single-line.
-      if(oneLinerCheck(type,, item)) {
+      if(oneLinerCheck(type, item)) {
         var itemDiv = createEl('div', 'item');
         var property = createEl('span', 'property');
         var value = createEl('span', 'value ' + type.toLowerCase());
