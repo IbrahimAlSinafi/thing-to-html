@@ -26,7 +26,7 @@
     },
     arrayOfObjects: [
       {arrays: 'can', be: 'nested'},
-      {as: 'deep', as: ['you', {would: 'like'}]},
+      {as: 'deep', az: ['you', {would: 'like'}]},
       {this: {reminds: {me: {of: 'Inception'}}}}
     ]
   };
@@ -42,7 +42,7 @@
     },
     {numbers: 1234567890, moreNumbers: 0987654321},
     {this: {obj: {can: {be: {nested: ['like', 'crazy', {deep: undefined}]}}}}},
-    ['array', ['within', 'arrays'], ['within' ['more', 'arrays']]]
+    ['array', ['within', 'arrays'], ['within', ['more', 'arrays']]]
   ];
 
   var selection = myObject;
