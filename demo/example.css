@@ -81,30 +81,6 @@ body {
   background: white;
   border-color: lightgray;
 }
-.user-input {
-  border-top: 1px solid gray;
-  margin-top: 10px;
-  padding-top: 10px;
-}
-.user-input #input {
-  width: 100%;
-  border-radius: 5px;
-  border: 1px solid lightgray;
-  padding: 5px;
-  margin: 10px 0;
-  transition: border 2s;
-}
-.user-input #input.error {
-  transition: none;
-  border: 1px solid red;
-}
-.user-input #submit {
-  transition: none;
-}
-.user-input #submit.active {
-  background: black;
-  color: white;
-}
 @-webkit-keyframes squares {
   0% {
     background-position: 0% 0%;
